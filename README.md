@@ -1,0 +1,2 @@
+# Otti
+Linux für noobs
