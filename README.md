@@ -1,16 +1,25 @@
-# Otti
-Linux für noobs
+Otti - Technisches Portfolio 🚀
+Willkommen in meinem Portfolio-Repository. Hier dokumentiere ich meine Projekte, technischen Erfahrungen und Schwerpunkte aus den Bereichen IT-Infrastruktur und Handwerk.
 
-# Otti
 
-Statische Profil- und Portfolio-Website.
+## 🌐 Deployment & Erreichbarkeit
 
-Das Repository enthält eine einfache Website zur Darstellung eines technischen Profils sowie verschiedener Themenbereiche und Projekte.
-Die Seite ist vollständig statisch aufgebaut und benötigt keine Build-Tools oder externe Abhängigkeiten.
+* **Live-Webseite (Aktuell):** [https://cowboytmk.github.io/Otti/](https://cowboytmk.github.io/Otti/)
+* **Hinweis zur Struktur:** Die ursprüngliche Konfiguration über den Ordner `profil` wurde zugunsten einer sauberen Root-Struktur aufgelöst. Der Zugriff erfolgt nun direkt über das Hauptverzeichnis.
 
 ---
 
-# Seite starten / öffnen
+## 🌐 Seite lokal starten / öffnen
+
+**Variante 1 – Direkt im Browser öffnen**
+
+1. Repository herunterladen oder klonen:
+```bash
+git clone [https://github.com/CowboyTMK/Otti.git](https://github.com/CowboyTMK/Otti.git)
+
+
+
+# 🌐 Seite starten / öffnen
 
 ## Variante 1 – Direkt im Browser öffnen
 
@@ -23,27 +32,27 @@ git clone https://github.com/CowboyTMK/Otti.git
 2. In den Projektordner wechseln
 
 ```bash
-cd Otti/profil
+cd Otti
 ```
 
 3. Datei `index.html` im Browser öffnen
 
 ```text
-profil/index.html
+index.html
 ```
 
 Die Seite funktioniert lokal ohne Server, da sie nur aus statischen HTML-Dateien besteht.
 
 ---
 
-## Variante 2 – Lokalen Webserver verwenden (empfohlen)
+## Variante 2 – Lokalen Webserver verwenden
 
 Ein lokaler Server verhindert Probleme mit relativen Pfaden.
 
 ### Python
 
 ```bash
-cd Otti/profil
+cd Otti
 python -m http.server 8000
 ```
 
@@ -55,197 +64,89 @@ http://localhost:8000
 
 ---
 
-# Projektübersicht
-
-**Otti** ist eine statische Portfolio-Seite.
-Sie dient zur strukturierten Darstellung von:
-
-* Profilinformationen
-* technischen Fähigkeiten
-* Projekten
-* Interessensgebieten
-* praktischen Erfahrungen
-
-Die Startseite fungiert als zentrale Übersicht.
-Weitere Seiten beschreiben einzelne Themenbereiche detaillierter.
 
 ---
 
-# Technisches Format
+🛠️ Themen & Schwerpunkte
+Das Portfolio ist in verschiedene Fachbereiche unterteilt, die Einblicke in meine praktische Arbeit geben:
 
-Die Website basiert vollständig auf statischen Webtechnologien.
+• Systemintegration: IT-Infrastrukturen und Vernetzung.
 
-## Verwendete Technologien
+• Heimnetzwerk & Home-Assistant: Smart Home Automatisierung und sichere Netzwerkkonfiguration.
 
-* **HTML** – Struktur der Website
-* **CSS** – Layout und Gestaltung
-* **Browser Rendering** – Ausführung ohne zusätzliche Software
+• 3D-Druck: Projekte, Prototyping und additive Fertigung.
 
-Es werden **keine Frameworks**, **keine Build-Tools** und **keine Datenbanken** verwendet.
+• Technische Praxis & Motorrad: Dokumentationen zu mechanischen Arbeiten und Instandhaltung.
 
----
-
-## HTML-Struktur
-
-Die Seiten sind klassische HTML-Dokumente.
-
-Typischer Aufbau:
-
-```
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Seitentitel</title>
-</head>
-
-<body>
-
-    Inhalt der Seite
-
-</body>
-</html>
-```
-
-Die Navigation zwischen den Seiten erfolgt über interne Links.
-
-Beispiel:
-
-```
-<a href="portfolio/3d-druck.html">3D Druck</a>
-```
+• Produktionsumfeld: IT-Lösungen und Prozesse im industriellen Kontext.
 
 ---
 
-# Projektstruktur
+🏗️ Repository-Struktur
+Nach der Optimierung der Verzeichnisstruktur sieht das Projekt nun wie folgt aus:
 
-```
-Otti
-│
-├── README.md
-│
-└── profil
-    │
-    ├── index.html
-    │
-    └── portfolio
-        ├── 3d-druck.html
-        ├── heimnetzwerk.html
-        ├── home-assistant.html
-        ├── motorrad.html
-        ├── produktionsumfeld.html
-        ├── systemintegration.html
-        └── technische-praxis.html
-```
+• `index.html` – Die zentrale Einstiegsseite (Landingpage).
+
+• `portfolio/` – Verzeichnis mit den detaillierten Projektseiten (z. B. `3d-druck.html`, `systemintegration.html`).
+
+• `README.md` – Diese Dokumentation.
+
 
 ---
 
-# Seitenstruktur
+📝 Technischer Änderungsverlauf
 
-## Startseite
-
-`profil/index.html`
-
-Funktion:
-
-* zentrale Übersicht
-* Einstiegspunkt der Website
-* Navigation zu Portfolio-Bereichen
+* **11.03.2026 - 19:42 Uhr | Dokumentations-Update:** Vollständige Aktualisierung der `README.md` auf die neue Verzeichnisstruktur inklusive detaillierter Projekthistorie.
+* **11.03.2026 - 19:38 Uhr | Git-Infrastruktur Fixes:** Korrektur des Branch-Zustands (Detached HEAD), Auflösung von Merge-Konflikten bei unzusammenhängenden Historien und finale Synchronisation via Force-Push.
+* **11.03.2026 - 19:35 Uhr | GitHub Pages Konfiguration:** Umstellung der Deployment-Quelle auf das Root-Verzeichnis, um die Erreichbarkeit unter der Haupt-URL sicherzustellen.
+* **11.03.2026 - 19:25 Uhr | Struktur-Migration:** Verschiebung aller Dateien aus dem Verzeichnis `/profil` in das Root-Verzeichnis und Bereinigung der Alt-Ordner sowie Korrektur von Case-Sensitivity Fehlern.
+* **11.03.2026 - 18:45 Uhr | Initialer Commit:** Erstellung der Grundstruktur der Portfolio-Webseite innerhalb des Unterverzeichnisses `/profil`.
 
 ---
 
-## Portfolio-Seiten
+📝 Ausführlicher Entwicklungsverlauf
 
-Ordner:
+Phase 1: Initialer Aufbau (Version 1.0)
 
-```
-profil/portfolio/
-```
+• Konzept: Erstellung einer statischen Portfolio-Webseite auf Basis von HTML5.
 
-Diese Seiten beschreiben einzelne Themenbereiche.
+• Struktur: Trennung der Inhalte in eine Startseite und themenspezifische Detailseiten im Unterordner `/profil/portfolio`.
 
-Beispiele:
+• Inhalt: Dokumentation der Schwerpunkte 3D-Druck, Systemintegration und Smart Home.
 
-| Seite             | Inhalt                              |
-| ----------------- | ----------------------------------- |
-| 3D Druck          | Projekte und technische Anwendungen |
-| Heimnetzwerk      | Netzwerkstruktur und Infrastruktur  |
-| Home Assistant    | Smart-Home Systeme                  |
-| Systemintegration | technische Integration              |
-| Technische Praxis | praktische technische Erfahrung     |
-| Produktionsumfeld | Arbeitsumgebungen                   |
-| Motorrad          | persönlicher technischer Bereich    |
+Phase 2: Deployment-Optimierung (März 2026)
 
----
+Im Zuge der Veröffentlichung auf GitHub Pages traten strukturelle Hindernisse auf, die eine grundlegende Umgestaltung der Verzeichnisstruktur erforderlich machten:
 
-# Navigation der Website
+1. Struktur-Begradigung (Root-Level Migration):
 
-Typischer Ablauf beim Besuch der Seite:
+  • Ursprünglich lagen alle relevanten Dateien im Unterordner `/profil`. Dies führte dazu, dass die Webseite nur über `.../profil/index.html` erreichbar war.
 
-```
-Startseite
-   ↓
-Themenübersicht
-   ↓
-Portfolio-Seiten
-   ↓
-Detailinformationen zu einzelnen Bereichen
-```
+  • Lösung: Migration aller Dateien aus `/profil` direkt in das Hauptverzeichnis (Root). Der Ordner `profil` wurde vollständig entfernt.
 
-Der Besucher beginnt auf der **Startseite** und gelangt von dort zu den verschiedenen Themenbereichen.
+2. Fehlerbehebung im Git-Workflow:
+
+  • Während der Migration kam es zu einem "Detached HEAD" Zustand und Divergenzen zwischen dem lokalen Stand und GitHub.
+
+  • Lösung: Zusammenführung der Historien mittels `git merge --allow-unrelated-histories` und Bereinigung durch `git push --force`.
+
+3. Automatisierung:
+
+  • Einrichtung der automatischen Bereitstellung via GitHub Pages.
+
+Phase 3: Aktueller Status (Version 2.0)
+
+• Die Webseite ist nun unter der primären Repository-URL direkt erreichbar.
+
+• Die interne Verlinkung wurde auf das Root-Verzeichnis angepasst.
+
+• Die Dokumentation wurde vollständig aktualisiert.
 
 ---
 
-# Erweiterungsmöglichkeiten
+📜 Lizenz & Nutzung
+Dieses Projekt dient als persönliches Portfolio zur Dokumentation meiner Fähigkeiten. Der Code ist frei einsehbar und kann als Inspiration für eigene Projekte genutzt werden.
 
-Das Projekt ist bewusst minimal gehalten und kann erweitert werden.
 
-Mögliche Erweiterungen:
 
-* zentrales CSS-Stylesheet
-* responsive Layout für mobile Geräte
-* Bilder und Projektdokumentationen
-* JavaScript-Interaktionen
-* Kontaktformular
-* GitHub Pages Deployment
-* Navigationselemente zwischen allen Seiten
 
----
-
-# Veröffentlichung
-
-Die Website kann direkt über **GitHub Pages** veröffentlicht werden.
-
-Vorgehen:
-
-1. Repository öffnen
-2. Einstellungen → Pages
-3. Branch `main` auswählen
-4. Ordner `profil` als Root definieren
-
-Danach wird die Seite automatisch veröffentlicht.
-
----
-
-# Verlauf
-
-## Version 1.0
-
-Erste Struktur der Website.
-
-Enthält:
-
-* Startseite
-* mehrere Portfolio-Seiten
-* statische HTML-Struktur
-* einfache interne Navigation
-
-Ziel:
-Grundlage für eine persönliche Portfolio-Website.
-
----
-
-# Lizenz
-
-Dieses Projekt dient als persönliches Portfolio.
-Nutzung oder Anpassung für eigene Projekte möglich.
