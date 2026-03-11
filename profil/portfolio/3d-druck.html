@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D-Druck & Prototyping – Tobias Kropp</title>
+
+<style>
+    @keyframes moveGrid {
+        from { background-position: 0 0, 0 0, 0 0; }
+        to { background-position: 80px 80px, 80px 80px, 20px 20px; }
+    }
+
+    body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        color: #e5e5e5;
+        background-color: #0d1a33; 
+        background-image:
+            linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+            linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+            radial-gradient(circle, rgba(96,165,250,0.12) 1px, transparent 1px);
+        background-size: 80px 80px, 80px 80px, 20px 20px;
+        animation: moveGrid 60s linear infinite;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 40px 24px;
+        background: rgba(13, 26, 51, 0.75);
+        backdrop-filter: blur(5px);
+        border-radius: 20px;
+        min-height: 100vh;
+    }
+
+    .back-link {
+        display: inline-block;
+        color: #60a5fa;
+        text-decoration: none;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+
+    h1 { font-size: 38px; color: #60a5fa; margin: 0; text-shadow: 0 0 15px rgba(96,165,250,0.4); }
+    
+    .section-title {
+        font-size: 28px;
+        margin: 40px 0 20px 0;
+        color: #f0f0f0;
+        border-left: 4px solid #60a5fa;
+        padding-left: 15px;
+    }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 18px;
+        padding: 24px;
+    }
+
+    .card h3 { color: #60a5fa; margin-top: 0; }
+
+    .image-box {
+        background: rgba(0,0,0,0.3);
+        border: 1px dashed rgba(96,165,250,0.3);
+        border-radius: 18px;
+        height: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 30px 0;
+        color: #60a5fa;
+    }
+
+    .evolution-box {
+        background: rgba(96, 165, 250, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid rgba(96, 165, 250, 0.3);
+        margin-bottom: 30px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <a href="../index.html" class="back-link">← Zurück zur Übersicht</a>
+
+    <header style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 24px; margin-bottom: 40px;">
+        <h1>3D-Druck & Rapid Prototyping</h1>
+        <p style="color: #bfbfbf; margin-top: 6px;">Vom Hardware-Modding zur effizienten Multi-Material-Fertigung</p>
+    </header>
+
+    <section>
+        <h2 class="section-title">Die Evolution meines Setups</h2>
+        <div class="evolution-box">
+            <p><strong>Der Anfang: Ender 3 Pro (Heavy Modded)</strong><br>
+            Angefangen hat alles mit einem Ender 3 Pro, der über die Zeit tiefgreifend optimiert wurde: 
+            Dual Linear Rails für mechanische Präzision, ein Sprite Extruder für Direct-Drive-Performance und die Steuerung via Raspberry Pi. 
+            Softwareseitig kam erst OctoPrint zum Einsatz, bevor der Wechsel auf <strong>Klipper</strong> inklusive Remote Power Management erfolgte.</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>Aktuelles System: Kobra 3 & ACE</h3>
+                <p>Heute nutze ich den <strong>Anycubic Kobra 3 mit ACE Pro</strong>. Der Fokus hat sich von der Maschinenbastelei hin zur Produktivität verschoben. Das System ermöglicht schnellen 4-fach Filamentwechsel, was den Workflow deutlich entspannter und effizienter macht.</p>
+            </div>
+            <div class="card">
+                <h3>Konstruktion mit FreeCAD</h3>
+                <p>Ich lade nicht nur Modelle, ich erschaffe sie. Mit <strong>FreeCAD</strong> konstruiere ich passgenaue Funktionsteile für meine IT-Projekte, den Haushalt oder einfach "4fun". Parametrisches Design erlaubt mir dabei höchste Flexibilität.</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <div class="image-box">
+        [PLATZHALTER: FOTO DEINES KOBRA 3 ODER EINES FREECAD-ENTWURFS]
+    </div>
+
+    <section>
+        <h2 class="section-title">Smart-Home Integration</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Monitoring & Remote</h3>
+                <p>Einbindung in <strong>Home Assistant</strong> zur Überwachung von Temperaturen und Stromverbrauch. Sicherer Fernzugriff über WireGuard VPN.</p>
+            </div>
+            <div class="card">
+                <h3>Automatisierung</h3>
+                <p>Remote Power Management ermöglicht das automatisierte Abschalten nach Druckende oder im Fehlerfall – ein wichtiger Sicherheitsaspekt in meiner Infrastruktur.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="margin-top: 40px;">
+        <h2 class="section-title">Technische Skills</h2>
+        <ul>
+            <li><strong>Hardware-Hacking:</strong> Umbau auf Linear Rails, Extruder-Upgrades, Raspberry Pi Integration.</li>
+            <li><strong>Software:</strong> Klipper-Konfiguration, Mainsail/Fluidd, OctoPrint, Slicing-Optimierung.</li>
+            <li><strong>CAD:</strong> Geometrische Modellierung funktionaler Bauteile in FreeCAD.</li>
+        </ul>
+    </section>
+
+    <footer style="margin-top: 60px; padding: 30px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; color: #9ca3af;">
+        © Tobias Kropp | Systemintegration & Additive Fertigung
+    </footer>
+</div>
+
+</body>
+</html>

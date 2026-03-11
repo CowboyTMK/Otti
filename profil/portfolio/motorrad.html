@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motorrad – Tobias Kropp</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+<style>
+    /* Falls du die CSS noch nicht ausgelagert hast, hier der Block für die Konsistenz: */
+    @keyframes moveGrid {
+        from { background-position: 0 0, 0 0, 0 0; }
+        to { background-position: 80px 80px, 80px 80px, 20px 20px; }
+    }
+
+    body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        color: #e5e5e5;
+        background-color: #0d1a33; 
+        background-image:
+            linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+            linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+            radial-gradient(circle, rgba(96,165,250,0.12) 1px, transparent 1px);
+        background-size: 80px 80px, 80px 80px, 20px 20px;
+        animation: moveGrid 60s linear infinite;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 40px 24px;
+        background: rgba(13, 26, 51, 0.75);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 20px;
+        min-height: 100vh;
+    }
+
+    .back-link {
+        display: inline-block;
+        color: #60a5fa;
+        text-decoration: none;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+
+    h1 { font-size: 38px; color: #60a5fa; margin: 0; text-shadow: 0 0 15px rgba(96,165,250,0.4); }
+    
+    .section-title {
+        font-size: 28px;
+        margin: 40px 0 20px 0;
+        color: #f0f0f0;
+        border-left: 4px solid #60a5fa;
+        padding-left: 15px;
+    }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 18px;
+        padding: 24px;
+    }
+
+    .image-box {
+        background: rgba(0,0,0,0.3);
+        border: 1px dashed rgba(96,165,250,0.3);
+        border-radius: 18px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+        color: #60a5fa;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <a href="../index.html" class="back-link">← Zurück zur Übersicht</a>
+
+    <header style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 24px; margin-bottom: 40px;">
+        <h1>Honda CBF1000</h1>
+        <p style="color: #bfbfbf; margin-top: 6px;">Baujahr 2006 · Interstellar Black · Traum erfüllt seit November 2025</p>
+    </header>
+
+    <section>
+        <h2 class="section-title">Die Story</h2>
+        <p>
+            Meinen Führerschein habe ich bereits <strong>1999</strong> gemacht, aber erst jetzt, im November, habe ich mir mit der schwarzen <strong>CBF1000</strong> den Traum vom eigenen Motorrad erfüllt. Als technisch begeisterter Mensch ist die CBF für mich die perfekte Wahl: Zuverlässig, kraftvoll und mechanisch absolut logisch aufgebaut.
+        </p>
+    </section>
+
+    <div class="image-box">
+        [PLATZHALTER: HIER KOMMT DAS BILD DEINER SCHWARZEN CBF1000 REIN]
+    </div>
+
+    <section>
+        <h2 class="section-title">Technische Eckdaten</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Antrieb</h3>
+                <p>998 cm³ Reihenvierzylinder, 98 PS. Ein gedrosselter Fireblade-Motor (SC57), bekannt für seine extreme Langlebigkeit.</p>
+            </div>
+            <div class="card">
+                <h3>Mechanik & Pflege</h3>
+                <p>Wartung und technische Checks führe ich mit der gleichen Sorgfalt durch wie die Administration meiner IT-Systeme.</p>
+            </div>
+            <div class="card">
+                <h3>Ausstattung</h3>
+                <p>ABS-System, verstellbare Sitzhöhe und die klassische Honda-Ergonomie für lange Touren.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="margin-top: 60px; padding: 30px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; color: #9ca3af;">
+        © Tobias Kropp
+    </footer>
+</div>
+
+</body>
+</html>

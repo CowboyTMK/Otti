@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heimnetzwerk – Tobias Kropp</title>
+
+<style>
+    /* Identisches Design für absolute Konsistenz */
+    @keyframes moveGrid {
+        from { background-position: 0 0, 0 0, 0 0; }
+        to { background-position: 80px 80px, 80px 80px, 20px 20px; }
+    }
+
+    body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        color: #e5e5e5;
+        background-color: #0d1a33; 
+        background-image:
+            linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+            linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+            radial-gradient(circle, rgba(96,165,250,0.12) 1px, transparent 1px);
+        background-size: 80px 80px, 80px 80px, 20px 20px;
+        animation: moveGrid 60s linear infinite;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 40px 24px;
+        background: rgba(13, 26, 51, 0.75);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 20px;
+        min-height: 100vh;
+    }
+
+    .back-link {
+        display: inline-block;
+        color: #60a5fa;
+        text-decoration: none;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+
+    h1 { font-size: 38px; color: #60a5fa; margin: 0; text-shadow: 0 0 15px rgba(96,165,250,0.4); }
+    
+    .section-title {
+        font-size: 28px;
+        margin: 40px 0 20px 0;
+        color: #f0f0f0;
+        border-left: 4px solid #60a5fa;
+        padding-left: 15px;
+    }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 18px;
+        padding: 24px;
+    }
+
+    .image-box {
+        background: rgba(0,0,0,0.3);
+        border: 1px dashed rgba(96,165,250,0.3);
+        border-radius: 18px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+        color: #60a5fa;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <a href="../index.html" class="back-link">← Zurück zur Übersicht</a>
+
+    <header style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 24px; margin-bottom: 40px;">
+        <h1>Netzwerkinfrastruktur</h1>
+        <p style="color: #bfbfbf; margin-top: 6px;">Sicherheit · Performance · Segmentierung</p>
+    </header>
+
+    <section>
+        <h2 class="section-title">Konzept & Sicherheit</h2>
+        <p>
+            Mein Heimnetzwerk ist mehr als nur ein Internetanschluss. Es ist ein strukturiertes Test- und Produktivsystem, das nach modernen IT-Sicherheitsstandards aufgebaut ist. Ein wesentlicher Fokus liegt auf der <strong>Trennung von Netzbereichen</strong> und der Vermeidung von Cloud-Abhängigkeiten.
+        </p>
+    </section>
+
+    
+
+    <div class="image-box">
+        [PLATZHALTER: NETZWERKPLAN / TOPOLOGIE-GRAFIK]
+    </div>
+
+    <section>
+        <h2 class="section-title">Technische Umsetzung</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Routing & Firewall</h3>
+                <p>Zentraler Knotenpunkt mit dediziertem Gastnetz-Management und strikter Port-Sicherheits-Strategie.</p>
+            </div>
+            <div class="card">
+                <h3>Remote Access</h3>
+                <p>Sicherer Fernzugriff ausschließlich via <strong>WireGuard VPN</strong>. Keine gefährlichen Portfreigaben (DNAT) für interne Dienste.</p>
+            </div>
+            <div class="card">
+                <h3>Storage (NAS)</h3>
+                <p>Zentrales Datengrab für Backups und Medien. Einbindung über strukturierte NFS/SMB Freigaben.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Admin-Details</h2>
+        <p>
+            Im Rahmen meiner Systemanalyse habe ich die Infrastruktur so optimiert, dass kritische Systeme (wie die Smart-Home-Zentrale) auch bei Internetausfall voll funktionsfähig bleiben. Regelmäßige Firmware-Updates und Monitoring der Durchsatzraten gehören zum Standard-Wartungsplan.
+        </p>
+    </section>
+
+    <footer style="margin-top: 60px; padding: 30px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; color: #9ca3af;">
+        © Tobias Kropp
+    </footer>
+</div>
+
+</body>
+
+
+
