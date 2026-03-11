@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technische Praxis – Tobias Kropp</title>
+
+<style>
+/* --- BASIS DESIGN (Konsistenz) --- */
+@keyframes moveGrid {
+    from { background-position: 0 0, 0 0, 0 0; }
+    to { background-position: 80px 80px, 80px 80px, 20px 20px; }
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: #e5e5e5;
+    background-color: #0d1a33; 
+    background-image:
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        radial-gradient(circle, rgba(96,165,250,0.12) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 20px 20px;
+    animation: moveGrid 100s linear infinite;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(13, 26, 51, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.back-link {
+    display: inline-block;
+    color: #60a5fa;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+h1 { font-size: 2.5rem; color: #60a5fa; margin: 0; }
+.subtitle { color: #93c5fd; margin-bottom: 40px; }
+
+/* --- PRAXIS MODULE --- */
+.practice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.practice-card {
+    background: rgba(255,255,255,0.03);
+    border-radius: 18px;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.practice-card h3 {
+    color: #60a5fa;
+    border-bottom: 1px solid rgba(96,165,250,0.2);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 180px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed rgba(255,255,255,0.2);
+    color: #4b5563;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tag {
+    font-size: 0.75rem;
+    background: rgba(255,255,255,0.05);
+    padding: 3px 10px;
+    border-radius: 4px;
+    color: #9ca3af;
+}
+
+.highlight-box {
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(to right, rgba(96,165,250,0.1), transparent);
+    border-radius: 15px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-link">← Zurück zum Portfolio</a>
+
+    <header>
+        <h1>Technische Praxis</h1>
+        <div class="subtitle">Von der Signalverfolgung zur Systemstabilität</div>
+    </header>
+
+    <div class="practice-grid">
+        
+        <div class="practice-card">
+            <h3>Mess- & Elektrotechnik</h3>
+            <p>Sicherer Umgang mit Multimetern und Oszilloskopen zur Fehlereingrenzung in elektronischen Schaltungen und Kabelwegen.</p>
+            <div class="placeholder-img">[BILD: MESSGERÄT / WERKSTATT]</div>
+            <div class="skills-tags">
+                <span class="tag">Durchgangsprüfung</span>
+                <span class="tag">Spannungsanalyse</span>
+                <span class="tag">Löten (SMD/THT)</span>
+            </div>
+        </div>
+
+        <div class="practice-card">
+            <h3>Strukturierte Fehlersuche</h3>
+            <p>Systematische Eingrenzung von Fehlern ("Ausschlussverfahren"). Übertragung der Signalverfolgung aus der Audiotechnik auf IT-Netzwerke.</p>
+            <div class="placeholder-img">[BILD: SCHALTPLAN / DIAGRAMM]</div>
+            <div class="skills-tags">
+                <span class="tag">Signal-Flow</span>
+                <span class="tag">Ausschlussprinzip</span>
+                <span class="tag">Ursachenanalyse</span>
+            </div>
+        </div>
+
+        <div class="practice-card">
+            <h3>Hardware-Instandhaltung</h3>
+            <p>Präventive Wartung und Reparatur technischer Systeme. Verständnis für mechanische Abnutzung und thermische Probleme.</p>
+            <div class="placeholder-img">[BILD: GEÖFFNETER SERVER / PC]</div>
+            <div class="skills-tags">
+                <span class="tag">Hardware-Härtung</span>
+                <span class="tag">Thermal Management</span>
+                <span class="tag">Cable Management</span>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    <section class="highlight-box">
+        <h3>Der "Praxis-Vorteil" in der IT</h3>
+        <p>
+            In über zwei Jahrzehnten technischer Verantwortung habe ich gelernt, dass jedes komplexe System – ob ein Mischpult-Setup am Filmset oder ein Server-Cluster – auf denselben Prinzipien der Logik und Physik beruht. 
+            <br><br>
+            Meine Stärke liegt in der **Schnittstelle zwischen Theorie und Realität**: Ich verstehe nicht nur das Software-Protokoll, sondern habe auch ein Auge für die physische Schicht (Layer 1) und die elektrotechnischen Grundlagen.
+        </p>
+    </section>
+
+    <footer style="margin-top: 60px; text-align: center; color: #666;">
+        © Tobias Kropp | Handwerk & High-Tech
+    </footer>
+</div>
+
+</body>
+</html>

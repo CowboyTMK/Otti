@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Systemintegration – Kompetenzprofil – Tobias Kropp</title>
+
+<style>
+/* --- BASIS DESIGN (Konsistenz zum Portfolio) --- */
+@keyframes moveGrid {
+    from { background-position: 0 0, 0 0, 0 0; }
+    to { background-position: 80px 80px, 80px 80px, 20px 20px; }
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: #e5e5e5;
+    background-color: #0d1a33; 
+    background-image:
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        radial-gradient(circle, rgba(96,165,250,0.12) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 20px 20px;
+    animation: moveGrid 100s linear infinite;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(13, 26, 51, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.back-link {
+    display: inline-block;
+    color: #60a5fa;
+    text-decoration: none;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+h1 { font-size: 2.5rem; color: #60a5fa; margin: 0; }
+.subtitle { color: #93c5fd; margin-bottom: 40px; font-size: 1.1rem; }
+
+/* --- SKILL SEKTIONEN --- */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.skill-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 25px;
+    transition: border-color 0.3s;
+}
+
+.skill-card:hover {
+    border-color: #60a5fa;
+}
+
+.skill-card h3 {
+    color: #f0f0f0;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.95rem;
+    color: #bfbfbf;
+}
+
+.skill-list li strong {
+    color: #e5e5e5;
+    display: block;
+}
+
+/* --- METHODIK BOX --- */
+.method-box {
+    background: linear-gradient(135deg, rgba(96,165,250,0.1), transparent);
+    padding: 30px;
+    border-radius: 18px;
+    border-left: 5px solid #60a5fa;
+    margin-top: 40px;
+}
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tag {
+    background: rgba(96,165,250,0.2);
+    color: #93c5fd;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid rgba(96,165,250,0.3);
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-link">← Zurück zum Hauptprofil</a>
+
+    <header>
+        <h1>Systemintegration</h1>
+        <div class="subtitle">Planung, Implementierung und Wartung komplexer IT-Infrastrukturen</div>
+    </header>
+
+    <div class="skill-grid">
+        
+        <div class="skill-card">
+            <h3>🌐 Netzwerkadministration</h3>
+            <ul class="skill-list">
+                <li><strong>Protokolle & Dienste</strong> IPv4/v6, DHCP, DNS, TCP/IP Suite</li>
+                <li><strong>Routing & Switching</strong> Konfiguration von VLANs, Subnetting und statischem Routing</li>
+                <li><strong>VPN & Remote</strong> Standortvernetzung und sichere Client-Anbindungen (WireGuard, IPsec)</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <h3>🖥️ Server-Landschaften</h3>
+            <ul class="skill-list">
+                <li><strong>Microsoft Windows Server</strong> Active Directory (AD DS), Gruppenrichtlinien (GPO), Fileserver</li>
+                <li><strong>Linux Distributionen</strong> Administration von Debian/Ubuntu basierten Systemen, Shell-Scripting (Bash)</li>
+                <li><strong>Virtualisierung</strong> Betrieb und Verwaltung von Hypervisoren (Proxmox, VMware)</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <h3>🛡️ IT-Sicherheit & Backup</h3>
+            <ul class="skill-list">
+                <li><strong>Firewalling</strong> Implementierung von Filterregeln und Intrusion Detection Systemen</li>
+                <li><strong>Datensicherung</strong> Backup-Strategien (3-2-1 Regel), Desaster Recovery Planung</li>
+                <li><strong>Härtung</strong> Absicherung von Systemen nach Best-Practices</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <h3>🔍 Fehleranalyse & Support</h3>
+            <ul class="skill-list">
+                <li><strong>Troubleshooting</strong> Systematische Fehlersuche in Hard- und Software (OSI-Modell)</li>
+                <li><strong>Monitoring</strong> Überwachung kritischer Systemparameter (Zabbix, Checkmk oder ähnliche)</li>
+                <li><strong>Dokumentation</strong> Erstellung technischer Systemdokumentationen und Betriebshandbücher</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <section class="method-box">
+        <h2 style="margin-top:0">Arbeitsweise & Methodik</h2>
+        <p>
+            Mein Fokus liegt auf **hochverfügbaren und wartungsfreundlichen Systemen**. Durch meine langjährige Erfahrung im professionellen Ton-Umfeld bin ich es gewohnt, auch in kritischen Situationen analytisch und ruhig zu agieren. In der IT wende ich diese "Signalweg-Mentalität" auf Netzwerkstrukturen und Serverumgebungen an.
+        </p>
+        <div class="tag-cloud">
+            <span class="tag">OSI-MODELL</span>
+            <span class="tag">ITIL ORIENTIERT</span>
+            <span class="tag">DOCUMENTATION FIRST</span>
+            <span class="tag">LOCAL-ONLY SECURE</span>
+            <span class="tag">AUTOMATION</span>
+        </div>
+    </section>
+
+    <footer style="margin-top: 60px; text-align: center; color: #888; font-size: 0.9rem;">
+        © Tobias Kropp | Portfolio – Fokus Systemintegration
+    </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produktionsumfeld & Projektmanagement – Tobias Kropp</title>
+
+<style>
+/* --- BASIS DESIGN (Konsistenz) --- */
+@keyframes moveGrid {
+    from { background-position: 0 0, 0 0, 0 0; }
+    to { background-position: 80px 80px, 80px 80px, 20px 20px; }
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: #e5e5e5;
+    background-color: #0d1a33; 
+    background-image:
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        radial-gradient(circle, rgba(96,165,250,0.12) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 20px 20px;
+    animation: moveGrid 100s linear infinite;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(13, 26, 51, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.back-link {
+    display: inline-block;
+    color: #60a5fa;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+h1 { font-size: 2.5rem; color: #60a5fa; margin: 0; }
+.subtitle { color: #93c5fd; margin-bottom: 40px; font-size: 1.1rem; }
+
+/* --- SECTIONS --- */
+.set-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.set-card {
+    background: rgba(255,255,255,0.03);
+    border-radius: 18px;
+    padding: 25px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.set-card h3 {
+    color: #f0f0f0;
+    margin-top: 0;
+    border-left: 3px solid #60a5fa;
+    padding-left: 12px;
+}
+
+.experience-box {
+    background: rgba(96,165,250,0.05);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(96,165,250,0.1);
+    color: #93c5fd;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    margin: 4px 2px;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 300px;
+    background: rgba(0,0,0,0.2);
+    border: 1px dashed rgba(255,255,255,0.1);
+    border-radius: 15px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4b5563;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-link">← Zurück zum Portfolio</a>
+
+    <header>
+        <h1>Produktionsumfeld</h1>
+        <div class="subtitle">20 Jahre Erfahrung in kritischen Systemumgebungen</div>
+    </header>
+
+    <p>
+        Filmproduktionen sind technologische Ausnahmezustände: Zeitdruck, wechselnde Standorte und die absolute Notwendigkeit von 100% Ausfallsicherheit. Als Tonmeister war ich nicht nur für den Klang verantwortlich, sondern für das Management komplexer drahtloser Infrastrukturen und technischer Teams.
+    </p>
+
+    <div class="set-grid">
+        
+        <div class="set-card">
+            <h3>RF-Management</h3>
+            <p>Koordination komplexer Funkstrecken-Setups. Überwachung des Frequenzspektrums zur Vermeidung von Interferenzen – die physikalische Basis moderner Drahtlosnetzwerke.</p>
+            <div class="tag">Frequenzanalyse</div>
+            <div class="tag">Intermodulationsberechnung</div>
+        </div>
+
+        <div class="set-card">
+            <h3>Teamführung</h3>
+            <p>Leitung der Tonabteilung in nationalen und internationalen Produktionen. Schnittstellenkommunikation zwischen Regie, Kamera und Technik.</p>
+            <div class="tag">Personalverantwortung</div>
+            <div class="tag">Projektplanung</div>
+        </div>
+
+        <div class="set-card">
+            <h3>Krisenmanagement</h3>
+            <p>Sofortige Fehlerbehebung im laufenden Betrieb. In einem Umfeld, in dem jede Minute Stillstand immense Kosten verursacht, ist lösungsorientiertes Handeln Standard.</p>
+            <div class="tag">Troubleshooting</div>
+            <div class="tag">Stressresistenz</div>
+        </div>
+
+    </div>
+
+    
+
+    <div class="image-placeholder">
+        [PLATZHALTER: BILD VOM SET ODER TECHNIK-RACK]
+    </div>
+
+    <section class="experience-box">
+        <h3>Warum das für die IT relevant ist:</h3>
+        <p>
+            Wer 20 Jahre lang am Set dafür gesorgt hat, dass Signale ohne Unterbrechung fließen, bringt eine **"Mission Critical"-Mentalität** mit. 
+            In der Systemintegration wende ich dieselben Prinzipien an:
+        </p>
+        <ul>
+            <li><strong>Redundanz:</strong> Immer einen Plan B (und C) für kritische Komponenten haben.</li>
+            <li><strong>Dokumentation:</strong> Klare Strukturen, damit das Team auch im Stress funktioniert.</li>
+            <li><strong>Präzision:</strong> Fehlervermeidung durch strukturierte Vorbereitung (Checklisten-Prinzip).</li>
+        </ul>
+    </section>
+
+    <footer style="margin-top: 60px; text-align: center; color: #666; font-size: 0.9rem;">
+        © Tobias Kropp | Professional Production Experience
+    </footer>
+</div>
+
+</body>
+</html>

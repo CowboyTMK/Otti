@@ -1,77 +1,456 @@
-export default function TobiasKroppHomepage() {
-            </div>
-            <p className="max-w-2xl text-neutral-300 leading-7">
-              Die folgenden Bereiche zeigen, wie ich praktische Technik, IT-Verständnis und Interesse an funktionierenden Systemen im Alltag zusammenführe.
-            </p>
-          </div>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {projects.map((project) => (
-              <article
-                key={project.name}
-                className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/6 to-white/[0.03] p-6 shadow-lg shadow-black/10"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-2xl font-semibold tracking-tight">{project.name}</h3>
-                </div>
-                <p className="mt-4 leading-7 text-neutral-300">{project.description}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.highlights.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full bg-neutral-900 px-3 py-1.5 text-xs text-neutral-200 ring-1 ring-white/10"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tobias Kropp – Portfolio</title>
 
-        <section className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
-          <div>
-            <p className="text-sm uppercase tracking-[0.2em] text-neutral-400">Werdegang</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight">Technische Entwicklung</h2>
-          </div>
-          <div className="space-y-6">
-            {timeline.map((item, index) => (
-              <div key={item.title} className="relative pl-8">
-                <div className="absolute left-0 top-1 h-4 w-4 rounded-full bg-sky-400" />
-                {index !== timeline.length - 1 && (
-                  <div className="absolute left-[7px] top-5 h-[calc(100%+12px)] w-px bg-white/10" />
-                )}
-                <p className="text-sm text-neutral-400">{item.period}</p>
-                <h3 className="mt-1 text-xl font-semibold">{item.title}</h3>
-                <p className="mt-2 leading-7 text-neutral-300">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+<style>
 
-        <section className="rounded-[2rem] border border-white/10 bg-white/5 p-8 md:p-10">
-          <p className="text-sm uppercase tracking-[0.2em] text-neutral-400">Kontakt</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight">Interesse an einem Austausch?</h2>
-          <p className="mt-4 max-w-2xl leading-7 text-neutral-300">
-            Ich freue mich über Kontakte zu Unternehmen, technischen Teams und Projekten im Bereich Systemintegration, Infrastruktur und praxisnaher IT.
-          </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-neutral-900/60 p-4">
-              <p className="text-sm text-neutral-400">E-Mail</p>
-              <p className="mt-2 text-neutral-100">OOOOOOOOOOOOOOOOO</p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-neutral-900/60 p-4">
-              <p className="text-sm text-neutral-400">Telefon</p>
-              <p className="mt-2 text-neutral-100">OOOO OOO OO OO</p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-neutral-900/60 p-4">
-              <p className="text-sm text-neutral-400">Standort</p>
-              <p className="mt-2 text-neutral-100">OOOOOO</p>
-            </div>
-          </div>
-        </section>
-      </main>
-      </div>
-    </div>
-  );
+/* Keyframes für die langsame Gitter-Bewegung */
+@keyframes moveGrid {
+    0% { background-position: 0px 0px, 0px 0px, 0px 0px; }
+    100% { background-position: 80px 80px, 80px 80px, 20px 20px; }
 }
+
+body {
+margin: 0;
+font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+color: #e5e5e5;
+
+/* NEU: Basis-Hintergrundfarbe ist jetzt ein dunkles, gesättigtes Blau */
+background-color: #0d1a33; 
+
+/* Geometrisches Muster (etwas kräftiger, damit es auf dem Blau wirkt) */
+background-image:
+linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+radial-gradient(circle, rgba(96,165,250,0.09) 1px, transparent 1px);
+
+background-size:
+80px 80px,
+80px 80px,
+20px 20px;
+
+/* NEU: Aktiviert die Animation - sehr langsam und unendlich */
+animation: moveGrid 100s linear infinite;
+} /* Die schließende Klammer wurde hier korrigiert */
+
+.container {
+max-width: 1100px;
+margin: auto;
+padding: 40px 24px;
+/* Leichtes Abdunkeln des Inhaltsbereichs für bessere Lesbarkeit auf dem neuen Blau */
+background-color: rgba(13, 26, 51, 0.6); 
+border-radius: 20px;
+}
+
+header {
+border-bottom: 1px solid rgba(255,255,255,0.08);
+padding-bottom: 24px;
+margin-bottom: 60px;
+}
+
+h1 {
+font-size: 38px;
+color: #60a5fa;
+margin: 0;
+text-shadow: 0 0 10px rgba(96,165,250,0.3); /* Subtiler Glow-Effekt */
+}
+
+.subtitle {
+color: #bfbfbf;
+margin-top: 6px;
+}
+
+.contact {
+font-size: 14px;
+color: #bfbfbf;
+margin-top: 10px;
+}
+
+section {
+margin-bottom: 80px;
+}
+
+.section-title {
+font-size: 28px;
+margin-bottom: 20px;
+color: #f0f0f0;
+}
+
+.card-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 24px;
+}
+
+.card {
+/* Karten etwas heller gemacht, um sich vom neuen Hintergrund abzuheben */
+background: rgba(255,255,255,0.06); 
+border: 1px solid rgba(255,255,255,0.1);
+border-radius: 18px;
+padding: 24px;
+transition: transform 0.2s ease; /* Kleiner Hover-Effekt */
+}
+
+.card:hover {
+transform: translateY(-3px);
+background: rgba(255,255,255,0.08);
+}
+
+.tag {
+display: inline-block;
+background: rgba(96,165,250,0.2); /* Etwas kräftiger */
+color: #93c5fd;
+padding: 6px 12px;
+border-radius: 20px;
+margin: 4px;
+font-size: 13px;
+border: 1px solid rgba(147, 197, 253, 0.1);
+}
+
+.timeline {
+border-left: 2px solid rgba(255,255,255,0.1);
+padding-left: 20px;
+}
+
+.timeline-item {
+margin-bottom: 30px;
+}
+
+.timeline-item span {
+color: #9ca3af;
+font-size: 14px;
+}
+
+.footer {
+margin-top: 60px;
+padding: 30px;
+border-top: 1px solid rgba(255,255,255,0.08);
+text-align: center;
+color: #9ca3af;
+}
+
+</style><style>
+
+/* Definition der flüssigen Bewegung für alle Ebenen */
+@keyframes moveGrid {
+    from {
+        background-position: 0 0, 0 0, 0 0;
+    }
+    to {
+        /* Die Werte müssen Vielfache der background-size sein für einen nahtlosen Loop */
+        background-position: 80px 80px, 80px 80px, 20px 20px;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: #e5e5e5;
+    
+    /* Hintergrundfarbe: Sattes, tiefes Blau */
+    background-color: #0d1a33; 
+
+    /* Die drei Ebenen des Musters */
+    background-image:
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        radial-gradient(circle, rgba(96,165,250,0.12) 1px, transparent 1px);
+
+    background-size: 80px 80px, 80px 80px, 20px 20px;
+
+    /* Hier wird die Animation erzwungen */
+    animation: moveGrid 60s linear infinite;
+    
+    /* Verhindert Ruckeln in manchen Browsern */
+    backface-visibility: hidden;
+    perspective: 1000;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 24px;
+    /* Ein leichter Glas-Effekt lässt den animierten Hintergrund durchschimmern */
+    background: rgba(13, 26, 51, 0.75);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    min-height: 100vh;
+}
+
+header {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 24px;
+    margin-bottom: 60px;
+}
+
+h1 {
+    font-size: 38px;
+    color: #60a5fa;
+    margin: 0;
+    text-shadow: 0 0 15px rgba(96,165,250,0.4);
+}
+
+.subtitle {
+    color: #bfbfbf;
+    margin-top: 6px;
+}
+
+.contact {
+    font-size: 14px;
+    color: #93c5fd;
+    margin-top: 10px;
+}
+
+section {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #f0f0f0;
+    border-left: 4px solid #60a5fa;
+    padding-left: 15px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(96,165,250,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(96,165,250,0.15);
+    color: #93c5fd;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin: 4px;
+    font-size: 13px;
+    border: 1px solid rgba(147, 197, 253, 0.2);
+}
+
+.timeline {
+    border-left: 2px solid rgba(96,165,250,0.3);
+    padding-left: 25px;
+}
+
+.timeline-item {
+    margin-bottom: 35px;
+    position: relative;
+}
+
+/* Kleiner Punkt auf der Timeline */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -31px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: #60a5fa;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #60a5fa;
+}
+
+.timeline-item span {
+    color: #93c5fd;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.footer {
+    margin-top: 60px;
+    padding: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    color: #9ca3af;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>Tobias Kropp</h1>
+
+<div class="subtitle">
+Fachinformatiker für Systemintegration (Umschulung) · Technisches Profil mit langjähriger Systempraxis
+</div>
+
+<div class="contact">
+[STADT] · [TELEFONNUMMER] · [E-MAIL ADRESSE]
+</div>
+
+</header>
+
+
+<section>
+
+<h2 class="section-title">Profil</h2>
+
+<p>
+Ich befinde mich derzeit in der Umschulung zum Fachinformatiker für Systemintegration und bringe über 20 Jahre Erfahrung im Betrieb komplexer technischer Systeme aus dem Produktionsumfeld mit. Mein Schwerpunkt liegt auf stabilen Abläufen, strukturierter Fehleranalyse und der Verbindung von praktischer Technik mit moderner IT-Infrastruktur.
+</p>
+
+<div style="margin-top:20px">
+
+<span class="tag">Netzwerkadministration</span>
+<span class="tag">Windows & Linux</span>
+<span class="tag">IT-Sicherheit</span>
+<span class="tag">Fehleranalyse</span>
+<span class="tag">Systemtechnik</span>
+
+</div>
+
+</section>
+
+
+<section>
+    <h2 class="section-title">Kompetenzen</h2>
+    <div class="card-grid">
+        <a href="systemintegration.html" style="text-decoration: none; color: inherit;">
+            <div class="card">
+                <h3>Systemintegration</h3>
+                <p>Umschulung mit Fokus auf Netzwerke, Windows- und Linux-Systeme sowie IT-Sicherheit.</p>
+            </div>
+        </a>
+
+        <a href="technische-praxis.html" style="text-decoration: none; color: inherit;">
+            <div class="card">
+                <h3>Technische Praxis</h3>
+                <p>Langjährige Erfahrung im Betrieb technischer Systeme, strukturierter Fehleranalyse und stabilen Abläufen.</p>
+            </div>
+        </a>
+
+        <a href="produktionsumfeld.html" style="text-decoration: none; color: inherit;">
+            <div class="card">
+                <h3>Produktionsumfeld</h3>
+                <p>Über 20 Jahre Erfahrung als Filmtonassistent und Tonmeister in internationalen Produktionen.</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Projekte & Interessen</h2>
+    <div class="card-grid">
+        <a href="home-assistant.html" style="text-decoration: none; color: inherit;">
+            <div class="card">
+                <h3>Home Assistant</h3>
+                <p>Smart-Home-Automatisierung mit Fokus auf Integration verschiedener Geräte und stabile Systemabläufe.</p>
+            </div>
+        </a>
+
+        <a href="heimnetzwerk.html" style="text-decoration: none; color: inherit;">
+            <div class="card">
+                <h3>Heimnetzwerk</h3>
+                <p>Strukturierter Aufbau eines privaten Netzwerks mit Router-, Switch- und Infrastrukturkonzept.</p>
+            </div>
+        </a>
+
+        <a href="3d-druck.html" style="text-decoration: none; color: inherit;">
+            <div class="card">
+                <h3>3D-Druck</h3>
+                <p>Konstruktion und Fertigung praktischer Bauteile sowie technische Problemlösungen.</p>
+            </div>
+        </a>
+
+        <a href="motorrad.html" style="text-decoration: none; color: inherit;">
+            <div class="card">
+                <h3>Motorrad</h3>
+                <p>Technikinteresse und praktisches Verständnis für Mechanik, Wartung und technische Systeme.</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+<section>
+
+<h2 class="section-title">Werdegang</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<span>seit 07/2025</span>
+<h3>Umschulung Fachinformatiker Systemintegration</h3>
+<p>Netzwerke, Betriebssysteme, IT-Sicherheit und systematische Fehleranalyse.</p>
+</div>
+
+<div class="timeline-item">
+<span>2002 – 2025</span>
+<h3>Filmtonassistent / Tonmeister</h3>
+<p>Betrieb drahtloser Ton- und Funksysteme, Frequenzkoordination und technische Abstimmung am Set.</p>
+</div>
+
+<div class="timeline-item">
+<span>1999 – 2002</span>
+<h3>Ausbildung Mediengestalter Bild und Ton</h3>
+<p>Technische Grundlage für signal- und systembasierte Produktionsumgebungen.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="section-title">Kontakt</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<strong>E-Mail</strong>
+<p>[E-MAIL ADRESSE]</p>
+</div>
+
+<div class="card">
+<strong>Telefon</strong>
+<p>[TELEFONNUMMER]</p>
+</div>
+
+<div class="card">
+<strong>Standort</strong>
+<p>[STADT]</p>
+</div>
+
+</div>
+
+</section>
+
+
+<div class="footer">
+
+© Tobias Kropp
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projektdetail – Smart Home Zentralisierung</title>
+
+<style>
+/* --- BASIS DESIGN (Bleibt konsistent zum Portfolio) --- */
+@keyframes moveGrid {
+    from { background-position: 0 0, 0 0, 0 0; }
+    to { background-position: 80px 80px, 80px 80px, 20px 20px; }
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #e5e5e5;
+    background-color: #0d1a33; 
+    background-image:
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        radial-gradient(circle, rgba(96,165,250,0.12) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 20px 20px;
+    animation: moveGrid 80s linear infinite;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(13, 26, 51, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* --- NAVIGATION --- */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 30px;
+    transition: color 0.3s;
+}
+.back-link:hover { color: #93c5fd; }
+
+/* --- TYPOGRAFIE & STRUKTUR --- */
+h1 { font-size: 2.5rem; color: #60a5fa; margin-bottom: 10px; }
+h2 { font-size: 1.8rem; color: #f0f0f0; margin-top: 50px; border-bottom: 1px solid rgba(96,165,250,0.3); padding-bottom: 10px; }
+h3 { color: #93c5fd; margin-top: 30px; }
+
+.intro-text { font-size: 1.2rem; color: #bfbfbf; margin-bottom: 40px; }
+
+/* --- BILD-PLATZHALTER --- */
+.image-placeholder {
+    background: linear-gradient(45deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    border: 2px dashed rgba(255,255,255,0.1);
+    border-radius: 15px;
+    width: 100%;
+    height: 400px; /* Höhe nach Bedarf anpassen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0;
+    color: #60a5fa;
+    text-align: center;
+    overflow: hidden;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Sobald du Bilder hast, füllen sie den Rahmen perfekt aus */
+}
+
+/* --- INFOKARTEN --- */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.tech-card {
+    background: rgba(255,255,255,0.03);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* --- PROZESS-LISTE --- */
+.process-step {
+    border-left: 2px solid #60a5fa;
+    padding-left: 25px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.process-step::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background: #0d1a33;
+    border: 2px solid #60a5fa;
+    border-radius: 50%;
+}
+
+.tag {
+    background: rgba(96,165,250,0.1);
+    color: #60a5fa;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    border: 1px solid rgba(96,165,250,0.2);
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-link">← Zurück zur Projektübersicht</a>
+
+    <header>
+        <h1>Smart Home Zentralisierung</h1>
+        <p class="intro-text">
+            Aufbau einer herstellerunabhängigen Steuerzentrale mit Fokus auf lokaler Datenverarbeitung, 
+            Sicherheit und Langzeit-Energiemonitoring.
+        </p>
+    </header>
+
+    <div class="image-placeholder">
+        <div>
+            <p><strong>[PLATZHALTER: HAUPTBILD / DASHBOARD SCREENSHOT]</strong></p>
+            <p style="font-size: 0.8rem; color: #888;">Empfohlen: 1920x1080px</p>
+        </div>
+    </div>
+
+    <section>
+        <h2>1. Analyse & Planung</h2>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <h3>Ist-Zustand</h3>
+                <p>Fragmentierte Steuerung über Cloud-Apps von Amazon, AVM und EcoFlow. Keine korrelierende Datenauswertung möglich, hohes Risiko bei Internetausfall.</p>
+            </div>
+            <div class="tech-card">
+                <h3>Soll-Konzept</h3>
+                <p>Zusammenführung aller Protokolle (Zigbee, WiFi, DECT) in Home Assistant. Lokale Datenspeicherung und gesicherter Fernzugriff via VPN.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>2. Technische Realisierung</h2>
+        
+        <div class="process-step">
+            <strong>Infrastruktur-Härtung:</strong> 
+            Einsatz eines Raspberry Pi 4 im Argon M.2 Gehäuse. Umstellung von SD-Karte auf <strong>M.2 SATA SSD</strong> zur Vermeidung von Dateisystemfehlern und zur Performancesteigerung der InfluxDB-Datenbank.
+        </div>
+
+        <div class="image-placeholder" style="height: 300px;">
+            <div>
+                <p><strong>[PLATZHALTER: FOTO HARDWARE / RASPBERRY PI SETUP]</strong></p>
+            </div>
+        </div>
+
+        <div class="process-step">
+            <strong>Protokoll-Integration:</strong>
+            Implementierung von <strong>Zigbee2MQTT</strong> für maximale Gerätekompatibilität. Trennung der Funknetze zur Vermeidung von Interferenzen mit dem 2.4GHz WLAN.
+        </div>
+
+        <div class="process-step">
+            <strong>Sicherheit & Zugriff:</strong>
+            Einrichtung eines <strong>WireGuard VPN</strong> Gateways. Deaktivierung von Port-Forwarding (DNAT) zur Minimierung der Angriffsfläche. Implementierung eines Rollen- und Rechtekonzepts für verschiedene Nutzergruppen.
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Monitoring & Automation</h2>
+        <p>Ein Kernaspekt des Projekts war die Visualisierung von Energieflüssen. Durch die Anbindung der EcoFlow-API und von Shelly-Messgeräten konnte eine Echtzeit-Analyse des Hausverbrauchs realisiert werden.</p>
+        
+        <div class="tech-grid">
+            <div class="tech-card">
+                <strong>Automatisierungs-Logik</strong>
+                <ul>
+                    <li>Heizungsabsenkung bei Fensteröffnung (AVM DECT)</li>
+                    <li>Dynamische Lichtsteuerung via Präsenzmelder</li>
+                    <li>Batterie-Schutzschaltungen für Solarspeicher</li>
+                </ul>
+            </div>
+            <div class="tech-card">
+                <strong>Verwendete Technologien</strong><br><br>
+                <span class="tag">YAML</span> <span class="tag">MQTT</span> <span class="tag">InfluxDB</span><br>
+                <span class="tag">Grafana</span> <span class="tag">Python Scripts</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="image-placeholder">
+        <div>
+            <p><strong>[PLATZHALTER: SCREENSHOT ENERGIE-DASHBOARD / GRAFANA]</strong></p>
+        </div>
+    </div>
+
+    <section>
+        <h2>4. Fazit & Projektabschluss</h2>
+        <div class="tech-card" style="background: rgba(96,165,250,0.05);">
+            <p>
+                Das Projekt wurde innerhalb des 40-Stunden-Zeitrahmens erfolgreich abgeschlossen. Die Abhängigkeit von externen Cloud-Diensten wurde um ca. 90% reduziert. Das System bietet nun eine solide Basis für zukünftige Erweiterungen im Bereich Predictive Maintenance und KI-gestützte Laststeuerung.
+            </p>
+        </div>
+    </section>
+
+    <footer style="margin-top: 80px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #888;">
+        © 2026 Tobias Kropp | Fachinformatiker für Systemintegration
+    </footer>
+</div>
+
+</body>
+</htmk>
