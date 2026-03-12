@@ -21,7 +21,7 @@ git clone [https://github.com/CowboyTMK/Otti.git](https://github.com/CowboyTMK/O
 
 # 🌐 Seite starten / öffnen
 
-## Variante 1 – Direkt im Browser öffnen
+##  Direkt im Browser öffnen
 
 1. Repository herunterladen oder klonen
 
@@ -45,27 +45,6 @@ Die Seite funktioniert lokal ohne Server, da sie nur aus statischen HTML-Dateien
 
 ---
 
-## Variante 2 – Lokalen Webserver verwenden
-
-Ein lokaler Server verhindert Probleme mit relativen Pfaden.
-
-### Python
-
-```bash
-cd Otti
-python -m http.server 8000
-```
-
-Danach im Browser öffnen:
-
-```text
-http://localhost:8000
-```
-
----
-
-
----
 
 🛠️ Themen & Schwerpunkte
 Das Portfolio ist in verschiedene Fachbereiche unterteilt, die Einblicke in meine praktische Arbeit geben:
